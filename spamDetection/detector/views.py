@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
+import os
 import pandas as pd
 from django.shortcuts import render
 from sklearn.feature_extraction.text import CountVectorizer
@@ -8,8 +9,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from .forms import MessageForm
 
-
-dataset = pd.read_csv('emails.csv')
+#  Get the directory that views.py is in
+module_dir = os.path.dirname(__file__)  
+# Create the full path to the csv file
+file_path = os.path.join(module_dir, 'emails.csv')
+dataset = pd.read_csv(file_path)
 
 vectorizer = CountVectorizer()
 X = vectorizer.fit_transform(dataset['text'])
