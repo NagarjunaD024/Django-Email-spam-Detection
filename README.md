@@ -49,6 +49,6 @@ This project follows the **MVT (Model-View-Template)** pattern, which is Django'
 
 ## Result
 
-![Spam](images/Stream-lit.png)
+![Spam](images/HAm.png)
 
-![Ham!](images/stream-lit-2.png)
+![Ham!](images/Spam.png)
